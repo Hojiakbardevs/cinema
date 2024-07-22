@@ -9,6 +9,16 @@
   --yellow-color: #f18128;
   --font-family-text: "Montserrat", sans-serif;
   --font-text: "Comfortaa", sans-serif;
+  --fill-back: linear-gradient(
+    270deg,
+    rgba(7, 15, 25, 0.56) 0%,
+    rgba(49, 114, 9, 0.56) 100%
+  );
+  --gray-linear-gradient: linear-gradient(
+    96deg,
+    rgba(35, 35, 35, 0.8) 10.86%,
+    rgba(11, 11, 11, 0.6) 110.86%
+  );
   --white-linear-gradient: linear-gradient(
     90deg,
     #def7ff 0,
@@ -186,7 +196,7 @@ button {
 .main-title::after {
   content: "";
   position: absolute;
-  width: 98px;
+  width: 100%;
   height: 2px;
   background-color: var(--yellow-color);
   left: 0;
@@ -195,7 +205,7 @@ button {
 
 /* card element design */
 .cards {
-  margin: 54px 0 80px 0;
+  margin: 80px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -298,4 +308,197 @@ button {
   line-height: 27px; /* 150% */
   width: 40%;
   margin: 46px 0 60px 0;
+}
+
+.card-serial {
+  width: 350px;
+  height: 194px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-serial::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--fill-back);
+}
+
+.card-infos {
+  z-index: 1;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  padding: 18px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-infos > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.card-infos > div p {
+  color: #fff;
+  font-family: var(--font-text);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.cards-overlay {
+  position: relative;
+  margin: 60px 0 30px 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.cards-overlay::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  z-index: 1;
+  background-image: var(--gray-linear-gradient);
+}
+
+.cards-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.cards-overlay .card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+.card-overlay {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.card-overlay h1 {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.card-overlay p {
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 30px; /* 150% */
+}
+
+/* grid template */
+
+.grid-title {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  margin-bottom: 80px;
+}
+.grid-title > div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.grid-title > div::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-image: var(--gray-linear-gradient);
+  border-radius: 6px;
+}
+
+.grid-title > div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 3 / 3;
+  width: 100%;
+  height: 100%;
+}
+.div2 {
+  grid-area: 1 / 3 / 2 / 4;
+  width: 100%;
+  height: 100%;
+}
+.div3 {
+  grid-area: 1 / 4 / 2 / 5;
+  width: 100%;
+  height: 100%;
+}
+.div4 {
+  grid-area: 2 / 3 / 3 / 4;
+  width: 100%;
+  height: 100%;
+}
+.div5 {
+  grid-area: 2 / 4 / 3 / 5;
+  width: 100%;
+  height: 100%;
+}
+.play-icon {
+  width: 40px !important;
+  height: 48px !important;
+}
+.div1-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+footer {
+  background-image: linear-gradient(90deg, #ff8c30 0%, #9f4700 100%);
+  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.8));
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+.footer-content > div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
