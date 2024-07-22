@@ -505,6 +505,13 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
+  
+  .footer-content{
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 20px 0;
+  };
   nav ul{
     display: none;
   }
@@ -552,10 +559,4 @@ footer {
     padding: 30px
   };
   
-  .footer-content{
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-    padding: 20px 0;
-  }
 }
